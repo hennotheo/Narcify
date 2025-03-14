@@ -3,6 +3,7 @@ using NarcifyCore.Interfaces;
 using NarcifyCore.Models;
 using NarcifyCore.Repository;
 using NUnit.Framework.Legacy;
+using NUnit.Framework;
 
 namespace NarcifyCoreTest;
 
@@ -14,29 +15,28 @@ public class SearchTests
     }
 
     [Test]
-    [TestCase("A")]
-    public void CallingResearchFunction(string query)
+    public void CallingResearchFunction()
     {
         IRepository repository = new YoutubeRepository();
+        IReadOnlyCollection<ResearchResult> results = repository.Search("Cat").GetAwaiter().GetResult();
 
-        if (repository.Search(query).Count != 0)
+        if (results.Count == 0)
         {
-            Assert.Pass();
+            Assert.Fail();
         }
 
-        Assert.Fail();
+        Assert.Pass();
     }
 
     [Test]
-    [TestCase("Query")]
-    public void CheckResearchMatchQuery(string query)
+    public void CheckAllResearchValid()
     {
         IRepository repository = new YoutubeRepository();
-        IReadOnlyCollection<ResearchResult> results = repository.Search(query);
+        IReadOnlyCollection<ResearchResult> results = repository.Search("Cat").GetAwaiter().GetResult();
 
         foreach (var result in results)
         {
-            if (result.Query != query)
+            if (result.Type == ResearchType.None)
             {
                 Assert.Fail();
             }

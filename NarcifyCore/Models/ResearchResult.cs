@@ -1,8 +1,21 @@
+using Google.Apis.YouTube.v3.Data;
+
 namespace NarcifyCore.Models;
 
-public struct ResearchResult
+public readonly struct ResearchResult
 {
-    public string Query { get; set; }
+    public readonly string? Name;
+    public readonly ResearchType Type;
 
-    public string Name { get; set; }
+    public ResearchResult(SearchResult searchResult)
+    {
+        Name = searchResult.Snippet?.Title;
+        Type = searchResult.Id.Kind switch
+        {
+            "youtube#video" => ResearchType.Video,
+            "youtube#channel" => ResearchType.Channel,
+            "youtube#playlist" => ResearchType.Playlist,
+            _ => ResearchType.None
+        };
+    }
 }
