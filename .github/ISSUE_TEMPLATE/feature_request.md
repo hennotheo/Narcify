@@ -7,10 +7,10 @@ assignees: ''
 
 ---
 
-**Describe the feature**
+**:memo: Describe the feature**
 A clear and concise description of what the bug is.
 
-**Test to pass**
+**:test_tube: Test to pass**
 A clear and concise list of tests to pass to validate the feature
-- A
-- B
+- :test_tube: A
+- :test_tube: B
