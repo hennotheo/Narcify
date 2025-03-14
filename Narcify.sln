@@ -2,6 +2,11 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NarcifyCore", "NarcifyCore\NarcifyCore.csproj", "{4538D2E2-EEE1-452E-8DBA-93D762D2A26F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NarcifyCoreTest", "Tests\NarcifyCoreTest\NarcifyCoreTest.csproj", "{F96D04FF-AECA-4968-8384-3FC8A094B43B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4538D2E2-EEE1-452E-8DBA-93D762D2A26F} = {4538D2E2-EEE1-452E-8DBA-93D762D2A26F}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +17,9 @@ Global
 		{4538D2E2-EEE1-452E-8DBA-93D762D2A26F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4538D2E2-EEE1-452E-8DBA-93D762D2A26F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4538D2E2-EEE1-452E-8DBA-93D762D2A26F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F96D04FF-AECA-4968-8384-3FC8A094B43B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F96D04FF-AECA-4968-8384-3FC8A094B43B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F96D04FF-AECA-4968-8384-3FC8A094B43B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F96D04FF-AECA-4968-8384-3FC8A094B43B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
