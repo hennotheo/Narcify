@@ -13,6 +13,14 @@ public class YoutubeRepository : IRepository
 
     public IReadOnlyCollection<ResearchResult> Search(string query)
     {
-        return m_researchResults;
+        List<ResearchResult> results = new();
+        foreach (var queryResult in m_researchResults)
+        {
+            ResearchResult result = queryResult;
+            result.Query = query;
+            results.Add(result);
+        }
+        
+        return results;
     }
 }
