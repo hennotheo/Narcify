@@ -20,7 +20,7 @@ public class YoutubeRepository : IRepository
 {
     private static readonly string API_KEY = Environment.GetEnvironmentVariable("YOUTUBE_API_KEY");
 
-    public async Task<IReadOnlyCollection<ResearchResult>> Search(string query)
+    public async Task<IReadOnlyCollection<ResearchResult>> Search(string query, int maxResults = 5)
     {
         var youtubeService = new YouTubeService(new BaseClientService.Initializer()
         {

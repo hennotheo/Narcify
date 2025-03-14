@@ -44,4 +44,21 @@ public class SearchTests
 
         Assert.Pass();
     }
+    
+    [Test]
+    [TestCase(5)]
+    [TestCase(10)]
+    [TestCase(15)]
+    public void CheckResearchCountValid(int count)
+    {
+        IRepository repository = new YoutubeRepository();
+        IReadOnlyCollection<ResearchResult> results = repository.Search("Cat", count).GetAwaiter().GetResult();
+
+        if(count != results.Count)
+        {
+            Assert.Fail();
+        }
+
+        Assert.Pass();
+    }
 }

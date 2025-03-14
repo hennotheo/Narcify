@@ -4,5 +4,5 @@ namespace NarcifyCore.Interfaces;
 
 public interface IRepository
 {
-    Task<IReadOnlyCollection<ResearchResult>> Search(string query);
+    Task<IReadOnlyCollection<ResearchResult>> Search(string query, int maxResults = 5);
 }
