@@ -30,12 +30,11 @@ public class YoutubeRepository : IRepository
 
         var searchListRequest = youtubeService.Search.List("snippet");
         searchListRequest.Q = query;
-        searchListRequest.MaxResults = 5;
+        searchListRequest.MaxResults = maxResults;
         
         var searchListResponse = await searchListRequest.ExecuteAsync();
 
         List<ResearchResult> results = new List<ResearchResult>();
-        
         foreach (SearchResult searchResult in searchListResponse.Items)
         {
             results.Add(new ResearchResult(searchResult));
