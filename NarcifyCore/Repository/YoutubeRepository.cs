@@ -1,16 +1,7 @@
-﻿namespace NarcifyCore;
+﻿using NarcifyCore.Interfaces;
+using NarcifyCore.Models;
 
-public struct ResearchResult
-{
-    public string Query { get; set; }
-
-    public string Name { get; set; }
-}
-
-public interface IRepository
-{
-    IReadOnlyCollection<ResearchResult> Search(string query);
-}
+namespace NarcifyCore.Repository;
 
 public class YoutubeRepository : IRepository
 {

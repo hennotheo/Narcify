@@ -1,4 +1,6 @@
 ﻿using NarcifyCore;
+using NarcifyCore.Interfaces;
+using NarcifyCore.Repository;
 
 namespace NarcifyCoreTest;
 
